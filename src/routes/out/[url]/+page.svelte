@@ -31,9 +31,6 @@
 
         <h1>Whoops</h1>
         <h3>Ein Link hat versucht dich zu einer ungültigen URL weiterzuleiten.</h3>
-        <h4>Solltest du sie trotzdem öffnen wollen, klicke <a href={data.url}>hier</a>.</h4>
-        <h5>Durch das Öffnen einer externen Webseite kann sie dich möglicherweise identifizieren!</h5>
-        <h6>Wir übernehmen keine Haftung!</h6>
     
     {:else if showDialog}
         <h1>Du verlässt nun WildChat</h1>
