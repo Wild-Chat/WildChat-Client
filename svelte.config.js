@@ -12,12 +12,12 @@ const config = {
         files: {
             lib: 'src/lib'
 		},
-		csp: {
-			mode: 'hash',
-			directives: {
-				"default-src": ["self", "localhost:*", "data:", "ws:", "cdn.jsdelivr.net", "*.xenorio.xyz"]
-			}
-		}
+		// csp: {
+		// 	mode: 'hash',
+		// 	directives: {
+		// 		"default-src": ["self", "localhost:*", "data:", "ws:", "cdn.jsdelivr.net", "*.xenorio.xyz"]
+		// 	}
+		// }
     }
 };
 
