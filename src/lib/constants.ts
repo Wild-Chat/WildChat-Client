@@ -17,3 +17,4 @@
 */
 
 export const API_HOST = "https://wildchat-api.xenorio.xyz"
+export const HOST = "https://wildchat.xenorio.xyz"
