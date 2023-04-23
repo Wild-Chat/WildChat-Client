@@ -31,20 +31,22 @@
     goto("/login");
   }
 
-  const ws = io(API_HOST)
+  const ws = io(API_HOST);
 
   let channelList: ChannelList;
 
-  activeChannel.subscribe(value => {
+  let chatWindow: ChatWindow;
+
+  activeChannel.subscribe((value) => {
     cache.update((current) => {
-      let channel = current.channels.get(value._id)
-      if(channel){
-        channel.unread = 0
-        current.channels.set(channel._id, channel)
+      let channel = current.channels.get(value._id);
+      if (channel) {
+        channel.unread = 0;
+        current.channels.set(channel._id, channel);
       }
-      return current
-    })
-  })
+      return current;
+    });
+  });
 
   ws.on("message", (msg) => {
     cache.update((current) => {
@@ -58,7 +60,7 @@
           messages: [],
           lastMessage: Date.now(),
           is_dm: msg.channel.is_dm,
-          autofocus: msg.channel.autofocus
+          autofocus: msg.channel.autofocus,
         };
       }
 
@@ -74,6 +76,10 @@
 
       return current;
     });
+
+    if ($activeChannel._id == msg.channel._id) {
+      chatWindow.scrollToBottom()
+    }
   });
 
   ws.on("error", (err) => {
@@ -82,18 +88,18 @@
 
   ws.on("channel-join", (channel) => {
     const cacheChannel = {
-        _id: channel._id,
-        name: channel.name,
-        unread: 0,
-        messages: [],
-        lastMessage: Date.now(),
-        is_dm: channel.is_dm,
-        autofocus: channel.autofocus,
-        participants: channel.participants
-      }
+      _id: channel._id,
+      name: channel.name,
+      unread: 0,
+      messages: [],
+      lastMessage: Date.now(),
+      is_dm: channel.is_dm,
+      autofocus: channel.autofocus,
+      participants: channel.participants,
+    };
     cache.update((current) => {
       current.channels.set(channel._id, cacheChannel);
-      if(cacheChannel.autofocus)activeChannel.set(cacheChannel)
+      if (cacheChannel.autofocus) activeChannel.set(cacheChannel);
       return current;
     });
   });
@@ -104,15 +110,18 @@
 <ChannelList bind:this={channelList} />
 
 <div id="chat-wrapper">
+  <ChannelBanner {channelList} />
 
-  <ChannelBanner channelList={channelList} />
+  <ChatWindow bind:this={chatWindow} />
 
-  <ChatWindow />
-
-  <ChatInput on:message={e => ws.emit('message', e.detail)} />
-  
+  <ChatInput
+    on:message={(e) => {
+      ws.emit("message", e.detail);
+      chatWindow.scrollToBottom(true);
+    }}
+  />
 </div>
 
 <svelte:head>
-    <title>WildChat | {$activeChannel.name}</title> 
+  <title>WildChat | {$activeChannel.name}</title>
 </svelte:head>

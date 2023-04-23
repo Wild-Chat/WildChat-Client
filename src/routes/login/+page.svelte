@@ -62,7 +62,6 @@
           break;
       }
     } else {
-      console.log(data);
       token.set(data.user.token);
       user.set(data.user);
       goto("/");

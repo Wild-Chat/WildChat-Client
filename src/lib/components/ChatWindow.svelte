@@ -23,9 +23,19 @@
   import MessageComponent from "./Message.svelte";
 
   let messages: Message[] = [];
+  let scrollLock = false;
+
+  let windowElement: HTMLDivElement;
+
+  export const scrollToBottom = (force?: boolean) => {
+    if(!scrollLock || force){
+      setTimeout(() => {
+        windowElement.scrollTop = windowElement.scrollHeight - windowElement.clientHeight;
+      }, 1)
+    }
+  };
 
   cache.subscribe((value) => {
-    //console.log('update')
     messages = Array.from(
       value.channels.get($activeChannel._id)?.messages || messages
     );
@@ -34,9 +44,22 @@
   activeChannel.subscribe((value) => {
     messages = Array.from(value.messages);
   });
+
+  function handleScroll(e: Event) {
+    if (!e.target) return;
+    const target = <HTMLDivElement>e.target;
+    const isAtBottom =
+      target.scrollTop === target.scrollHeight - target.clientHeight;
+
+    if(isAtBottom){
+      scrollLock = false
+    }else{
+      scrollLock = true
+    }
+  }
 </script>
 
-<div id="chat-window">
+<div id="chat-window" on:scroll={handleScroll} bind:this={windowElement}>
   {#each messages as message}
     <MessageComponent data={message} />
   {/each}

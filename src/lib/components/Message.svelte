@@ -40,10 +40,7 @@
 
   let badges: any[] = [];
 
-  console.log(data.author.badges)
-
   BadgeFlags.forEach((value, badge) => {
-    console.log((value & data.author.badges))
     if ((value & data.author.badges) == value) {
       badges.push({
         glyph: BadgeGlyphs.get(badge),
