@@ -202,27 +202,3 @@
 </Tooltip>
 
 <Tooltip triggerElement={sendButton} placement="left">Senden</Tooltip>
-
-<style>
-  #send-button {
-    margin-top: 1rem;
-  }
-
-  #attach-button {
-    margin-top: 1rem;
-  }
-
-  #input-actions {
-    display: flex;
-    flex-direction: column;
-    margin-left: 1rem;
-  }
-
-  #file-picker-input {
-    display: none;
-  }
-
-  .attachment-indicator {
-    margin-bottom: 0.5rem;
-  }
-</style>

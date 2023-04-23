@@ -144,6 +144,16 @@ a {
   cursor: pointer;
   display: inline-block;
   margin-bottom: 0.5rem;
+  display: flex;
+}
+
+.message-author-badges span {
+  margin-left: 5px;
+}
+
+.message-header {
+  height: 3rem;
+  display: flex;
 }
 
 .message-actions {
@@ -192,4 +202,54 @@ a {
 
 .attachment-content {
   margin-top: 0.5rem;
+}
+
+#channel-list-close {
+  display: none; /* we only want this on mobile */
+  margin: 0.5rem;
+}
+
+@media screen and (max-width: 1500px) {
+  #channel-list-close {
+    display: block;
+  }
+  #channel-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100vw;
+  }
+}
+
+#channel-banner {
+  text-align: center;
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+
+#channel-list-toggle {
+  float: left;
+}
+
+#send-button {
+  margin-top: 1rem;
+}
+
+#attach-button {
+  margin-top: 1rem;
+}
+
+#input-actions {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+
+#file-picker-input {
+  display: none;
+}
+
+.attachment-indicator {
+  margin-bottom: 0.5rem;
 }

@@ -39,15 +39,3 @@
 </div>
 
 <hr />
-
-<style>
-    #channel-banner {
-        text-align: center;
-        font-weight: 900;
-        font-size: 1.5rem;
-    }
-
-    #channel-list-toggle {
-        float: left;
-    }
-</style>

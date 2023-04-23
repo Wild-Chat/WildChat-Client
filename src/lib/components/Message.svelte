@@ -111,18 +111,3 @@
     <MessageAttachment attachment={data.attachment} />
   {/if}
 </div>
-
-<style>
-  .message-author {
-    display: flex;
-  }
-
-  .message-author-badges span {
-    margin-left: 5px;
-  }
-
-  .message-header {
-    height: 3rem;
-    display: flex;
-  }
-</style>

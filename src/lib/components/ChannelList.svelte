@@ -72,23 +72,3 @@
     {/each}
   </ul>
 {/if}
-
-<style>
-  #channel-list-close {
-    display: none; /* we only want this on mobile */
-    margin: 0.5rem;
-  }
-
-  @media screen and (max-width: 800px) {
-    #channel-list-close {
-      display: block;
-    }
-    #channel-list {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      width: 100vw;
-    }
-  }
-</style>
