@@ -1,0 +1,45 @@
+{
+	"name": "anarchat-client",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"prepare": "cp node_modules/bootstrap/dist/js/bootstrap.bundle.min.js static/ && npm run style-build",
+		"style-build": "sass src/theme:static/theme --no-source-map"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^2.0.0",
+		"@sveltejs/adapter-node": "^1.2.3",
+		"@sveltejs/kit": "^1.5.0",
+		"@types/bootstrap": "^5.2.6",
+		"@types/wicg-file-system-access": "^2020.9.6",
+		"sass": "^1.60.0",
+		"svelte": "^3.54.0",
+		"svelte-check": "^3.0.1",
+		"tslib": "^2.4.1",
+		"typescript": "^5.0.0",
+		"vite": "^4.2.0"
+	},
+	"type": "module",
+	"dependencies": {
+		"@fortawesome/free-regular-svg-icons": "^6.4.0",
+		"@fortawesome/free-solid-svg-icons": "^6.4.0",
+		"@picmo/popup-picker": "^5.8.2",
+		"@picmo/renderer-twemoji": "^5.8.2",
+		"bootstrap": "^5.2.3",
+		"emoji-picker-element": "^1.16.0",
+		"highlight.js": "^11.7.0",
+		"picmo": "^5.8.2",
+		"socket.io-client": "^4.6.1",
+		"sv-bootstrap-tooltip": "^0.2.1",
+		"svelte-fa": "^3.0.3",
+		"svelte-markdown": "^0.2.3"
+	},
+	"optionalDependencies": {
+		"fsevents": "^2.3.2"
+	}
+}

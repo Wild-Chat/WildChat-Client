@@ -1,0 +1,195 @@
+/*
+    WildChat-Client
+    Copyright (C) 2023  Marcus Huber (xenorio) <dev@xenorio.xyz>
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published
+    by the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*/
+
+// Initial Bootstrap Imports
+@import "../../node_modules/bootstrap/scss/functions.scss";
+@import "../../node_modules/bootstrap/scss/variables.scss";
+@import "../../node_modules/bootstrap/scss/mixins.scss";
+
+// Global Variables
+$color-primary: #b95f89;
+$color-secondary: #4062bb;
+$color-text: #eff1f3;
+$color-background: #000411;
+$color-background-secondary: #160c28;
+$color-background-message: #145c9e;
+
+// Bootstrap Overrides
+$theme-colors: (
+  primary: $color-primary,
+  secondary: $color-secondary,
+);
+
+$list-group-active-bg: $color-secondary;
+$list-group-bg: $color-background-secondary;
+$list-group-hover-bg: $color-secondary;
+$list-group-active-border-color: none;
+$list-group-border-color: none;
+$list-group-action-active-bg: $color-secondary;
+$list-group-color: $color-text;
+$list-group-active-color: $color-text;
+
+// Import full Bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Custom Styling
+body {
+  background: $color-background;
+  color: $color-text;
+  width: 100vw;
+  height: 100vh;
+}
+
+a {
+  color: $color-primary;
+}
+
+#channel-list {
+  width: 10vw;
+  height: 100vh;
+  background: $color-background-secondary;
+  overflow-y: scroll;
+  float: left;
+  margin-right: 0.5rem;
+}
+
+#channel-list li {
+  cursor: pointer;
+}
+
+#channel-list .channel-name {
+  overflow: hidden;
+  margin-right: 0.5rem;
+}
+
+#chat-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  border-radius: 25px;
+  padding: 1rem;
+  background: $color-background-secondary;
+}
+
+#chat-window {
+  flex-grow: 1;
+  overflow: scroll;
+  height: 100vh;
+}
+
+#chat-input-wrapper {
+  padding: 2rem;
+  background: $color-background-secondary;
+  border-radius: 25px;
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+#chat-input {
+  display: flex;
+}
+
+#chat-input textarea {
+  flex-grow: 1;
+  resize: none;
+}
+
+#noscript-notice {
+  text-align: center;
+  background: $color-background-secondary;
+  border-radius: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 3rem;
+}
+
+.message {
+  background: $color-background-message;
+  width: fit-content;
+  height: fit-content;
+  padding: 0.5rem;
+  border-radius: 25px;
+  margin-bottom: 0.5rem;
+  max-width: 100%;
+}
+
+.message-content {
+  word-wrap: break-word;
+}
+
+.message-author {
+  color: $color-secondary;
+  background: $color-background-secondary;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 25px;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.message-actions {
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+.message-action:hover {
+  cursor: pointer;
+  color: gray;
+}
+
+.message-attachment {
+  width: fit-content;
+  background: $color-primary;
+  border-radius: 25px;
+  padding: 0.5rem;
+}
+
+.message-attachment img {
+  max-width: 20vw;
+  border-radius: 25px;
+}
+
+.message-attachment video {
+  max-width: 20vw;
+  border-radius: 25px;
+}
+
+.message-attachment audio {
+  border-radius: 25px;
+}
+
+.attachment-meta {
+  display: flex;
+}
+
+.attachment-meta a {
+  margin-left: 0.5rem;
+}
+
+.attachment-name {
+  flex-grow: 1;
+  margin-right: 0.5rem;
+}
+
+.attachment-content {
+  margin-top: 0.5rem;
+}
