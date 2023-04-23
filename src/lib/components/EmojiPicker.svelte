@@ -57,6 +57,7 @@
 <button
     use:onLoad
     class="btn btn-primary"
+    id="emoji-button"
     bind:this={button}
     on:click={() => picker.toggle()}><Fa icon={faFaceLaugh} /></button
 >

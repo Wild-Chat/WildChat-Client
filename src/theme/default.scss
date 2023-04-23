@@ -209,19 +209,6 @@ a {
   margin: 0.5rem;
 }
 
-@media screen and (max-width: 1500px) {
-  #channel-list-close {
-    display: block;
-  }
-  #channel-list {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    width: 100vw;
-  }
-}
-
 #channel-banner {
   text-align: center;
   font-weight: 900;
@@ -252,4 +239,23 @@ a {
 
 .attachment-indicator {
   margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 1500px) {
+  #channel-list-close {
+    display: block;
+  }
+  #channel-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #emoji-button {
+    display: none;
+  }
 }
