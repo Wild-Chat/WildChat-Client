@@ -22,6 +22,7 @@
   import TableRenderer from "$lib/markdown-renderers/TableRenderer.svelte";
   import HTMLRenderer from "$lib/markdown-renderers/HTMLRenderer.svelte";
   import LinkRenderer from "$lib/markdown-renderers/LinkRenderer.svelte";
+  import ImageRenderer from "$lib/markdown-renderers/ImageRenderer.svelte";
   import Fa from "svelte-fa";
   import {
     type IconDefinition,
@@ -101,6 +102,7 @@
         table: TableRenderer,
         html: HTMLRenderer,
         link: LinkRenderer,
+        image: ImageRenderer
       }}
     />
   </div>
