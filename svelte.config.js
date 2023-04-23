@@ -15,7 +15,7 @@ const config = {
 		csp: {
 			mode: 'hash',
 			directives: {
-				"default-src": ["self", "localhost:*", "data:", "ws:", "cdn.jsdelivr.net"]
+				"default-src": ["self", "localhost:*", "data:", "ws:", "cdn.jsdelivr.net", "*.xenorio.xyz"]
 			}
 		}
     }
