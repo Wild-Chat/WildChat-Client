@@ -111,7 +111,7 @@
 
     <div class="mb-3 mt-3">
       <input
-        type="text"
+        type="password"
         class="form-control"
         placeholder="Zugangscode"
         required
