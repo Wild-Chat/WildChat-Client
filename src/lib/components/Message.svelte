@@ -121,5 +121,6 @@
 
   .message-header {
     height: 3rem;
+    display: flex;
   }
 </style>
