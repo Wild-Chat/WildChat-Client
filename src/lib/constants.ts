@@ -16,5 +16,5 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-export const API_HOST = "https://wildchat-api.xenorio.xyz"
+export const API_HOST = import.meta.env.PROD ? "https://wildchat-api.xenorio.xyz" : "http://localhost:3030"
 export const HOST = "https://wildchat.xenorio.xyz"
